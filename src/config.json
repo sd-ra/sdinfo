@@ -1,0 +1,15 @@
+{
+    "serverurl": "http://192.168.123.15:5000",
+    "views": [
+        { 
+            "name": "v_LagerplatzBelegung", 
+            "title": "Lagerplatz-Belegung",
+            "allowUpdating1": true,
+            "allowUpdating": {
+                "columns": [],
+                "users": ["kuelsch"],
+                "message": "Es sollte nur Ausgang verändert werden (Ausgang = Eingang => Bestand 0)"
+            }
+        }
+    ]
+}
