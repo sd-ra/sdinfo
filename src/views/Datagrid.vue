@@ -21,11 +21,20 @@
       @editing-start="editStart"
       @row-updating="putRow"
     >
+      <DxColumnChooser
+          :enabled="true"
+          mode="select"
+      />
       <DxSorting mode="multiple"/>
       <DxFilterRow :visible="true"/>
       <DxSearchPanel
         :visible="true"
         :width="240"
+      />
+      <DxStateStoring
+        :enabled="true"
+        type="localStorage"
+        storage-key="getStateStorage"
       />
       <DxEditing
         :allow-updating="allowUpdating"
@@ -38,7 +47,7 @@
 <script>
 
 import { DxSelectBox } from 'devextreme-vue';
-import { DxDataGrid, DxColumn, DxPager, DxPaging, DxSorting, DxFilterRow, DxSearchPanel, DxEditing } from 'devextreme-vue/data-grid';
+import { DxDataGrid, DxColumn, DxColumnChooser, DxSorting, DxFilterRow, DxSearchPanel, DxStateStoring, DxEditing } from 'devextreme-vue/data-grid';
 import axios from 'axios';
 import deMessages from "devextreme/localization/messages/de.json";
  
@@ -50,9 +59,11 @@ export default {
     DxSelectBox,
     DxDataGrid,
     DxColumn,
+    DxColumnChooser,
     DxSorting,
     DxFilterRow,
     DxSearchPanel,
+    DxStateStoring,
     DxEditing
   },
   created() {
@@ -67,6 +78,9 @@ export default {
       message: "",
       allowUpdating: false,
       url: this.$parent.config.serverurl + "/view/",
+      getStateStorage() {
+        return "StateStorage" + this.view.name;
+      },
       getData: () => {
         axios
           .get(this.url + this.view.name)
