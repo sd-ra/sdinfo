@@ -29,9 +29,6 @@
                 message: ""
             }
         },
-        created() {
-            this.$refs.username.focus();
-        },
         methods: {
             login() {
                 if(this.input.username != "" && this.input.password != "") {

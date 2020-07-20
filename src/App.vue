@@ -21,7 +21,11 @@
                 authenticated: false,
                 userList: null,
                 config: config,
-                userName: ""
+                userName: "",
+                current: {
+                  view: {},
+                  data: {}
+                },
             }
         },
         created() {

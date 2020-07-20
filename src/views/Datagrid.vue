@@ -3,11 +3,12 @@
     <table style="width:100%;">
       <td>
         <DxSelectBox
-          :items="views"
+          :items="this.$parent.config.views"
           display-expr="title"
           value-expr="name"
+          :value="this.$parent.current.view.name"
           :width="400"
-          @value-changed="getView"
+          @value-changed="getViewData"
         />
       </td>
       <td style="text-align:right">
@@ -73,7 +74,7 @@ export default {
   data() {
     return {
       views: this.$parent.config.views,
-      view: "",
+      view: {},
       dataSource: [],
       message: "",
       allowUpdating: false,
@@ -82,18 +83,27 @@ export default {
         return "StateStorage" + this.view.name;
       },
       getData: () => {
+        if (this.view.allowUpdating) {
+          this.allowUpdating = this.view.allowUpdating.users.filter(u => u == this.$parent.userName).length > 0;
+        }
+
         axios
           .get(this.url + this.view.name)
           .then(response => ( this.dataSource = response.data.recordset ))
       }
     };
   },
+  mounted() {
+    if (this.$parent.current.view.name) {
+      this.view = this.$parent.current.view;
+      this.getData();
+      //this.getViewData(this.$parent.current.view);
+    }
+  },
   methods: {
-    getView(e) {
-      this.view = this.$parent.config.views.find(v => v.name == e.value);
-      if (this.view.allowUpdating) {
-        this.allowUpdating = this.view.allowUpdating.users.filter(u => u == this.$parent.userName).length > 0;
-      }
+    getViewData(e) {
+      this.$parent.current.view = this.$parent.config.views.find(v => v.name == e.value);
+      this.view = this.$parent.current.view;
       this.getData();
     },
     editStart() {
