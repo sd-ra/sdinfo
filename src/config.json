@@ -4,12 +4,15 @@
         { 
             "name": "v_LagerplatzBelegung", 
             "title": "Lagerplatz-Belegung",
-            "allowUpdating1": true,
             "allowUpdating": {
                 "columns": [],
                 "users": ["kuelsch"],
                 "message": "Es sollte nur Ausgang verändert werden (Ausgang = Eingang => Bestand 0)"
             }
+        },
+        { 
+            "name": "v_OffenFuerFeinplan", 
+            "title": "Feinplanung: Wochenplan"
         }
     ]
 }
