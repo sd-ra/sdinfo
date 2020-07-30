@@ -6,13 +6,17 @@
             "title": "Lagerplatz-Belegung",
             "allowUpdating": {
                 "columns": [],
-                "users": ["kuelsch"],
+                "users": ["kuelsch", "ra"],
                 "message": "Es sollte nur Ausgang verändert werden (Ausgang = Eingang => Bestand 0)"
             }
         },
         { 
             "name": "v_OffenFuerFeinplan", 
             "title": "Feinplanung: Wochenplan"
+        },
+        {
+            "name": "v_Feinplan_v1",
+            "title": "Feinplanung: Feinplan"
         }
     ]
 }

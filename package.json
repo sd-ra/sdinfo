@@ -7,16 +7,19 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.5",
     "axios": "^0.19.2",
-    "quill": "1.3.7",
-    "jszip": "3.1.3",
-    "dx-systemjs-vue-browser": "latest",
-    "devextreme-vue": "20.1",
-    "devextreme": "20.1",
+    "devexpress-diagram": "1.0.5",
     "devexpress-gantt": "1.0.3",
-    "devexpress-diagram": "1.0.5"
+    "devextreme": "20.1",
+    "devextreme-vue": "^20.1.6",
+    "dx-systemjs-vue-browser": "latest",
+    "fs": "0.0.1-security",
+    "devextreme-intl": "latest",
+    "jszip": "3.1.3",
+    "quill": "1.3.7",
+    "save": "^2.4.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-router": "~4.2.0",

@@ -25,6 +25,13 @@ const routes = [
     }
   },
   {
+    path: '/test',
+    name: 'Test',
+    component: function () {
+      return import('../views/Test.vue')
+    }
+  },
+  {
     path: '/login',
     name: 'Login',
     component: function () {

@@ -1,25 +1,31 @@
 <template>
     <div id="login">
-    <div>
-        <img alt="Vue logo" src="../assets/sdlogo.png">
-        <br>
-        <h3>Willkommen bei der Informationsmanagement-App SDinfo</h3>
-        <br>
-    </div>
-    <div class="form-inputs">
-        <input type="text" id="username" ref="username" v-model="input.username" placeholder="Benutzername" />
-    </div>
-    <div class="form-inputs">
-        <input type="password" id="password" v-model="input.password" placeholder="Kennwort" />
-    </div>
+        <div>
+            <img alt="Vue logo" src="../assets/sdlogo.png">
+            <br>
+            <h3>Willkommen bei der Informationsmanagement-App SDinfo</h3>
+            <br>
+        </div>
+        <div class="form-inputs">
+            <input type="text" id="username" ref="username" v-model="input.username" placeholder="Benutzername" />
+        </div>
+        <div class="form-inputs">
+            <input type="password" id="password" v-model="input.password" placeholder="Kennwort" />
+        </div>
         <p>{{message}}</p>
         <button type="button" v-on:click="login()">Anmelden</button>
     </div>
 </template>
 
 <script>
+    import { DxTextBox, DxButton } from 'devextreme-vue';
+
     export default {
         name: 'Login',
+         components: {
+            DxTextBox,
+            DxButton,
+        },
         data() {
             return {
                 input: {

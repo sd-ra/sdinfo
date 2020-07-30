@@ -5,6 +5,9 @@
       <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Abmelden</router-link>
       <router-link v-else to="/login">Anmelden</router-link>
       <router-link to="/about">Hilfe</router-link>
+      <!-- 
+      <router-link to="/test">Test</router-link>
+      -->
     </div>
     <router-view @authenticated="setAuthenticated"/>
   </div>
