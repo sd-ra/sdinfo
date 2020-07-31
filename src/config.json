@@ -1,5 +1,5 @@
 {
-    "serverurl": "http://192.168.123.15:5000",
+    "serverurl": "http://localhost:5000",
     "views": [
         { 
             "name": "v_LagerplatzBelegung", 
