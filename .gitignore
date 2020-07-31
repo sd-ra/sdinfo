@@ -51,5 +51,4 @@ yarn-error.log*
 *.sln
 *.sw?
 
-/src/config.json
 package-lock.json
