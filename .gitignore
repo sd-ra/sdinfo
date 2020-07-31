@@ -53,3 +53,4 @@ yarn-error.log*
 
 /src/config.json
 package-lock.json
+package.json
